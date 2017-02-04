@@ -6,6 +6,7 @@ target 'ChauffeurPrive' do
   use_frameworks!
 
   # Pods for ChauffeurPrive
+  pod 'Mapbox-iOS-SDK', '~> 3.4.1'
 
   target 'ChauffeurPriveTests' do
     inherit! :search_paths

@@ -46,6 +46,7 @@
 		D8610F73F0FD96D533BE4F98F4ADBBAE /* Pods-ChauffeurPrive.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ChauffeurPrive.modulemap"; sourceTree = "<group>"; };
 		DC51930E7A28B686FC96C45B4D1333B5 /* Pods-ChauffeurPriveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChauffeurPriveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEF8BFD89AE09018720E0009B7E9A334 /* Pods-ChauffeurPriveTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ChauffeurPriveTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E3F3DEAC62E89F9ABAA5BE6404D5548E /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = dynamic/Mapbox.framework; sourceTree = "<group>"; };
 		ECBE1698EA2B21DEDFF2D0240FBCCCBD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE43FC214BBE93B81FE17B97330EE25C /* Pods-ChauffeurPriveTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ChauffeurPriveTests-dummy.m"; sourceTree = "<group>"; };
 		EF0DEF7F53714D07C6B0DC8671C78F88 /* Pods-ChauffeurPriveTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ChauffeurPriveTests-frameworks.sh"; sourceTree = "<group>"; };
@@ -84,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3433746FBB20361F7C06EA7E60ED2F4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3F3DEAC62E89F9ABAA5BE6404D5548E /* Mapbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3639BC694869884708B32BE1A8E4BE2F /* Pods-ChauffeurPriveTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +109,14 @@
 			);
 			name = "Pods-ChauffeurPriveTests";
 			path = "Target Support Files/Pods-ChauffeurPriveTests";
+			sourceTree = "<group>";
+		};
+		3B6AD4FFE66908FCA51F294DF844D59F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C622644E73922BB231E29AB8457EFB83 /* Mapbox-iOS-SDK */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		6874704EC93F24E829B4672FE7059FE7 /* Pods-ChauffeurPriveUITests */ = {
@@ -133,6 +150,7 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				3B6AD4FFE66908FCA51F294DF844D59F /* Pods */,
 				B5E6F9AF7A48F707DCF17D934F25DC49 /* Products */,
 				FD3FE3991B24E2CF3616E863445C89BA /* Targets Support Files */,
 			);
@@ -172,6 +190,15 @@
 				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C622644E73922BB231E29AB8457EFB83 /* Mapbox-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3433746FBB20361F7C06EA7E60ED2F4A /* Frameworks */,
+			);
+			name = "Mapbox-iOS-SDK";
+			path = "Mapbox-iOS-SDK";
 			sourceTree = "<group>";
 		};
 		FD3FE3991B24E2CF3616E863445C89BA /* Targets Support Files */ = {
