@@ -7,6 +7,8 @@ target 'ChauffeurPrive' do
 
   # Pods for ChauffeurPrive
   pod 'Mapbox-iOS-SDK', '~> 3.4.1'
+  pod 'RxSwift', '~> 3.2'
+  pod 'RxCocoa', '~> 3.2'
 
   target 'ChauffeurPriveTests' do
     inherit! :search_paths

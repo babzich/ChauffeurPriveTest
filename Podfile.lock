@@ -1,12 +1,19 @@
 PODS:
   - Mapbox-iOS-SDK (3.4.1)
+  - RxCocoa (3.2.0):
+    - RxSwift (~> 3.1)
+  - RxSwift (3.2.0)
 
 DEPENDENCIES:
   - Mapbox-iOS-SDK (~> 3.4.1)
+  - RxCocoa (~> 3.2)
+  - RxSwift (~> 3.2)
 
 SPEC CHECKSUMS:
   Mapbox-iOS-SDK: 9c0d23e9a3784e6c9e45af4339898e4598b5b09b
+  RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
+  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
 
-PODFILE CHECKSUM: 83c612ecf3534370d74cb8b554ecafe2000a41cc
+PODFILE CHECKSUM: a1448a45ee01a2727e5e29fc151dc984a2f02bd5
 
 COCOAPODS: 1.1.1
