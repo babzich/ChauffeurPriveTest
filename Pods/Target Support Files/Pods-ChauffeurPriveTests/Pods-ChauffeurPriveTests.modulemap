@@ -1,0 +1,6 @@
+framework module Pods_ChauffeurPriveTests {
+  umbrella header "Pods-ChauffeurPriveTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
