@@ -11,11 +11,20 @@
 		4763FB8DAC74E43C9D6D1C92 /* Pods_ChauffeurPrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591BA151D38F81ABC179A6ED /* Pods_ChauffeurPrive.framework */; };
 		52D0D96E93C7EB228FCD513B /* Pods_ChauffeurPriveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F521CA56C5F16B3074C314FD /* Pods_ChauffeurPriveUITests.framework */; };
 		BFE70CC41E45DF4A00D5096E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70CC31E45DF4A00D5096E /* AppDelegate.swift */; };
-		BFE70CC61E45DF4A00D5096E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70CC51E45DF4A00D5096E /* MapViewController.swift */; };
-		BFE70CCB1E45DF4A00D5096E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE70CCA1E45DF4A00D5096E /* Assets.xcassets */; };
-		BFE70CCE1E45DF4A00D5096E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE70CCC1E45DF4A00D5096E /* LaunchScreen.storyboard */; };
 		BFE70CD91E45DF4A00D5096E /* ChauffeurPriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70CD81E45DF4A00D5096E /* ChauffeurPriveTests.swift */; };
 		BFE70CE41E45DF4A00D5096E /* ChauffeurPriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70CE31E45DF4A00D5096E /* ChauffeurPriveUITests.swift */; };
+		BFE70CF91E45EC2600D5096E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE70CF51E45EC2600D5096E /* Assets.xcassets */; };
+		BFE70CFA1E45EC2600D5096E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE70CF61E45EC2600D5096E /* LaunchScreen.storyboard */; };
+		BFE70D001E45F59F00D5096E /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70CFF1E45F59F00D5096E /* CLLocationManager+Rx.swift */; };
+		BFE70D071E48CE0200D5096E /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70D061E48CE0200D5096E /* Font.swift */; };
+		BFE70D091E48CE0F00D5096E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70D081E48CE0F00D5096E /* Color.swift */; };
+		BFE70D0F1E48E17B00D5096E /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70D0E1E48E17B00D5096E /* RxCLLocationManagerDelegateProxy.swift */; };
+		BFE70D231E491AD800D5096E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70D221E491AD800D5096E /* LocationService.swift */; };
+		BFE70D2B1E491AE300D5096E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70D261E491AE300D5096E /* MapViewController.swift */; };
+		BFE70D2C1E491AE300D5096E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70D271E491AE300D5096E /* MapViewModel.swift */; };
+		BFE70D2D1E491AE300D5096E /* MissingPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70D281E491AE300D5096E /* MissingPermissionView.swift */; };
+		BFE70D2E1E491AE300D5096E /* MissingPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70D291E491AE300D5096E /* MissingPermissionViewController.swift */; };
+		BFE70D2F1E491AE300D5096E /* MissingPermissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70D2A1E491AE300D5096E /* MissingPermissionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,16 +53,25 @@
 		9ACBDE9DA7CBB13E23B22F42 /* Pods-ChauffeurPrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChauffeurPrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChauffeurPrive/Pods-ChauffeurPrive.debug.xcconfig"; sourceTree = "<group>"; };
 		BFE70CC01E45DF4A00D5096E /* ChauffeurPrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChauffeurPrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE70CC31E45DF4A00D5096E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFE70CC51E45DF4A00D5096E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		BFE70CCA1E45DF4A00D5096E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BFE70CCD1E45DF4A00D5096E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BFE70CCF1E45DF4A00D5096E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFE70CD41E45DF4A00D5096E /* ChauffeurPriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChauffeurPriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE70CD81E45DF4A00D5096E /* ChauffeurPriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChauffeurPriveTests.swift; sourceTree = "<group>"; };
 		BFE70CDA1E45DF4A00D5096E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFE70CDF1E45DF4A00D5096E /* ChauffeurPriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChauffeurPriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE70CE31E45DF4A00D5096E /* ChauffeurPriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChauffeurPriveUITests.swift; sourceTree = "<group>"; };
 		BFE70CE51E45DF4A00D5096E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFE70CF51E45EC2600D5096E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFE70CF71E45EC2600D5096E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BFE70CF81E45EC2600D5096E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFE70CFF1E45F59F00D5096E /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
+		BFE70D061E48CE0200D5096E /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		BFE70D081E48CE0F00D5096E /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BFE70D0E1E48E17B00D5096E /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		BFE70D221E491AD800D5096E /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		BFE70D261E491AE300D5096E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BFE70D271E491AE300D5096E /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		BFE70D281E491AE300D5096E /* MissingPermissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingPermissionView.swift; sourceTree = "<group>"; };
+		BFE70D291E491AE300D5096E /* MissingPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingPermissionViewController.swift; sourceTree = "<group>"; };
+		BFE70D2A1E491AE300D5096E /* MissingPermissionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingPermissionViewModel.swift; sourceTree = "<group>"; };
 		C826214BE62379040A7307B9 /* Pods-ChauffeurPriveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChauffeurPriveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChauffeurPriveUITests/Pods-ChauffeurPriveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CCE2156B52B37D02AF7B6BDE /* Pods-ChauffeurPriveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChauffeurPriveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChauffeurPriveTests/Pods-ChauffeurPriveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F521CA56C5F16B3074C314FD /* Pods_ChauffeurPriveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChauffeurPriveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,10 +144,11 @@
 			isa = PBXGroup;
 			children = (
 				BFE70CC31E45DF4A00D5096E /* AppDelegate.swift */,
-				BFE70CC51E45DF4A00D5096E /* MapViewController.swift */,
-				BFE70CCA1E45DF4A00D5096E /* Assets.xcassets */,
-				BFE70CCC1E45DF4A00D5096E /* LaunchScreen.storyboard */,
-				BFE70CCF1E45DF4A00D5096E /* Info.plist */,
+				BFE70CFE1E45F58D00D5096E /* Extensions */,
+				BFE70CF41E45EC2600D5096E /* Resources */,
+				BFE70D241E491AE300D5096E /* Screens */,
+				BFE70D211E491AD800D5096E /* Service */,
+				BFE70D051E48CDE700D5096E /* Style */,
 			);
 			path = ChauffeurPrive;
 			sourceTree = "<group>";
@@ -150,6 +169,62 @@
 				BFE70CE51E45DF4A00D5096E /* Info.plist */,
 			);
 			path = ChauffeurPriveUITests;
+			sourceTree = "<group>";
+		};
+		BFE70CF41E45EC2600D5096E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BFE70CF51E45EC2600D5096E /* Assets.xcassets */,
+				BFE70CF61E45EC2600D5096E /* LaunchScreen.storyboard */,
+				BFE70CF81E45EC2600D5096E /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BFE70CFE1E45F58D00D5096E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BFE70CFF1E45F59F00D5096E /* CLLocationManager+Rx.swift */,
+				BFE70D0E1E48E17B00D5096E /* RxCLLocationManagerDelegateProxy.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BFE70D051E48CDE700D5096E /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				BFE70D061E48CE0200D5096E /* Font.swift */,
+				BFE70D081E48CE0F00D5096E /* Color.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		BFE70D211E491AD800D5096E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BFE70D221E491AD800D5096E /* LocationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BFE70D241E491AE300D5096E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BFE70D251E491AE300D5096E /* Map */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BFE70D251E491AE300D5096E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BFE70D261E491AE300D5096E /* MapViewController.swift */,
+				BFE70D271E491AE300D5096E /* MapViewModel.swift */,
+				BFE70D281E491AE300D5096E /* MissingPermissionView.swift */,
+				BFE70D291E491AE300D5096E /* MissingPermissionViewController.swift */,
+				BFE70D2A1E491AE300D5096E /* MissingPermissionViewModel.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		E41CD71865BC785CE9FEF155 /* Frameworks */ = {
@@ -278,8 +353,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFE70CCE1E45DF4A00D5096E /* LaunchScreen.storyboard in Resources */,
-				BFE70CCB1E45DF4A00D5096E /* Assets.xcassets in Resources */,
+				BFE70CF91E45EC2600D5096E /* Assets.xcassets in Resources */,
+				BFE70CFA1E45EC2600D5096E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,8 +517,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFE70CC61E45DF4A00D5096E /* MapViewController.swift in Sources */,
+				BFE70D2E1E491AE300D5096E /* MissingPermissionViewController.swift in Sources */,
 				BFE70CC41E45DF4A00D5096E /* AppDelegate.swift in Sources */,
+				BFE70D071E48CE0200D5096E /* Font.swift in Sources */,
+				BFE70D0F1E48E17B00D5096E /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				BFE70D2D1E491AE300D5096E /* MissingPermissionView.swift in Sources */,
+				BFE70D001E45F59F00D5096E /* CLLocationManager+Rx.swift in Sources */,
+				BFE70D231E491AD800D5096E /* LocationService.swift in Sources */,
+				BFE70D091E48CE0F00D5096E /* Color.swift in Sources */,
+				BFE70D2B1E491AE300D5096E /* MapViewController.swift in Sources */,
+				BFE70D2F1E491AE300D5096E /* MissingPermissionViewModel.swift in Sources */,
+				BFE70D2C1E491AE300D5096E /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,10 +563,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BFE70CCC1E45DF4A00D5096E /* LaunchScreen.storyboard */ = {
+		BFE70CF61E45EC2600D5096E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BFE70CCD1E45DF4A00D5096E /* Base */,
+				BFE70CF71E45EC2600D5096E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -586,7 +670,7 @@
 			baseConfigurationReference = 9ACBDE9DA7CBB13E23B22F42 /* Pods-ChauffeurPrive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ChauffeurPrive/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ChauffeurPrive/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.babzich.ChauffeurPrive;
@@ -600,7 +684,7 @@
 			baseConfigurationReference = 3BDD2095D001D01C14C81674 /* Pods-ChauffeurPrive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ChauffeurPrive/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ChauffeurPrive/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.babzich.ChauffeurPrive;
@@ -686,6 +770,7 @@
 				BFE70CEA1E45DF4A00D5096E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFE70CEB1E45DF4A00D5096E /* Build configuration list for PBXNativeTarget "ChauffeurPriveTests" */ = {
 			isa = XCConfigurationList;
@@ -694,6 +779,7 @@
 				BFE70CED1E45DF4A00D5096E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFE70CEE1E45DF4A00D5096E /* Build configuration list for PBXNativeTarget "ChauffeurPriveUITests" */ = {
 			isa = XCConfigurationList;
@@ -702,6 +788,7 @@
 				BFE70CF01E45DF4A00D5096E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

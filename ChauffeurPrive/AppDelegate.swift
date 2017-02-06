@@ -16,7 +16,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             window.backgroundColor = UIColor.white
-            window.rootViewController = MapViewController()
+            let mapViewController = MapViewController()
+            window.rootViewController = UINavigationController(rootViewController: mapViewController)
             window.makeKeyAndVisible()
         }
         return true
