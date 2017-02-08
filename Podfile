@@ -13,6 +13,7 @@ target 'ChauffeurPrive' do
   target 'ChauffeurPriveTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Mapbox-iOS-SDK', '~> 3.4.1'
   end
 
   target 'ChauffeurPriveUITests' do

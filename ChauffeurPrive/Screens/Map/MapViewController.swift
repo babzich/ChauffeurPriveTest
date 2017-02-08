@@ -13,6 +13,8 @@ import Mapbox
 
 final class MapViewController: UIViewController {
     private let mapView: MGLMapView
+    private lazy var addressAnnotation = MGLPointAnnotation()
+    private let searchTextField: UITextField
     
     private let viewModel: MapViewModel
     private let disposeBag: DisposeBag
@@ -22,6 +24,7 @@ final class MapViewController: UIViewController {
     init() {
         self.viewModel = MapViewModel()
         self.mapView = MGLMapView(frame: .zero)
+        self.searchTextField = UITextField(frame: .zero)
         self.disposeBag = DisposeBag()
         
         super.init(nibName: nil, bundle: nil)
@@ -41,6 +44,8 @@ final class MapViewController: UIViewController {
         mapView.delegate = self
         
         view.addSubview(mapView)
+        view.addSubview(searchTextField)
+        setupSearchTextField()
         setupBinding()
     }
     
@@ -54,18 +59,49 @@ final class MapViewController: UIViewController {
         mapView.frame = view.bounds
     }
     
+    // MARK: Setup
+    
+    private func setupSearchTextField() {
+        searchTextField.translatesAutoresizingMaskIntoConstraints = false
+        searchTextField.backgroundColor = UIColor.white
+        searchTextField.leftView = UIView.init(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 40.0))
+        searchTextField.leftViewMode = .always
+        
+        let topConstraint = searchTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 30.0)
+        let leftConstraint = searchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40.0)
+        let rightConstraint = searchTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40.0)
+        let heightConstraint = searchTextField.heightAnchor.constraint(equalToConstant: 40.0)
+        NSLayoutConstraint.activate([topConstraint, leftConstraint, rightConstraint, heightConstraint])
+    }
+    
     // MARK: Binding
     
     private func setupBinding() {
+        searchTextField.placeholder = viewModel.searchPlaceholder
         viewModel.locationAuthorized
             .filter { !$0 }
             .drive(onNext: { [weak self] _ in self?.locationNotAuthorized() })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         viewModel.locationAuthorized
             .filter { $0 }
             .drive(onNext: { [weak self] _ in self?.locationAuthorized() })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
+        
+        searchTextField.rx.controlEvent(.editingDidBegin)
+            .subscribe(onNext: { [weak self] _ in self?.displayAddressAutocomplete() } )
+            .disposed(by: disposeBag)
+        
+        viewModel.selectedAddressCoordinate
+            .drive(onNext: { [weak self] coordinate in
+                guard let coordinate = coordinate else { return }
+                self?.updateAddressPin(with: coordinate)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.selectedAddressFormatted
+            .drive(searchTextField.rx.text)
+            .disposed(by: disposeBag)
     }
     
     // MARK: Common
@@ -80,6 +116,23 @@ final class MapViewController: UIViewController {
         if let presentedViewController = navigationController?.presentedViewController {
             presentedViewController.dismiss(animated: false, completion: nil)
         }
+    }
+    
+    private func displayAddressAutocomplete() {
+        let vm = AddressAutoCompleteViewModel(didSelectAddress: viewModel.didSelectAddress)
+        let autocompleteViewController = AddressAutoCompleteViewController(viewModel: vm)
+        let navigationController = UINavigationController(rootViewController: autocompleteViewController)
+        present(navigationController, animated: true, completion: nil)
+    }
+    
+    private func updateAddressPin(with coordinate: CLLocationCoordinate2D) {
+        addressAnnotation.coordinate = coordinate
+        
+        if !mapView.contains(addressAnnotation) {
+            mapView.addAnnotation(addressAnnotation)
+        }
+        
+        mapView.setCenter(coordinate, animated: true)
     }
 }
 

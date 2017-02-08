@@ -10,8 +10,20 @@
 		2903554A52DFE405FA2109C2 /* Pods_ChauffeurPriveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37906A6E5C58BEE5355DEA76 /* Pods_ChauffeurPriveTests.framework */; };
 		4763FB8DAC74E43C9D6D1C92 /* Pods_ChauffeurPrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591BA151D38F81ABC179A6ED /* Pods_ChauffeurPrive.framework */; };
 		52D0D96E93C7EB228FCD513B /* Pods_ChauffeurPriveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F521CA56C5F16B3074C314FD /* Pods_ChauffeurPriveUITests.framework */; };
+		BF0114E11E4B41D800DCE094 /* PostalAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114E01E4B41D800DCE094 /* PostalAddressTests.swift */; };
+		BF0114E41E4B4C7F00DCE094 /* MockPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114E31E4B4C7F00DCE094 /* MockPlacemark.swift */; };
+		BF0114E71E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114E61E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift */; };
+		BF427C821E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C811E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift */; };
+		BF427C841E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C831E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift */; };
+		BF427C8A1E4B345000091E2F /* PostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C891E4B345000091E2F /* PostalAddress.swift */; };
+		BF427C8C1E4B3D6800091E2F /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C8B1E4B3D6800091E2F /* CLLocationCoordinate2D+Extensions.swift */; };
+		BF427C8E1E4B3D8700091E2F /* MGLMapView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C8D1E4B3D8700091E2F /* MGLMapView+Extensions.swift */; };
+		BF7695931E493303001E5A4E /* AddressAutocompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7695921E493303001E5A4E /* AddressAutocompleteViewController.swift */; };
+		BF7695951E493323001E5A4E /* AddressAutoCompleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7695941E493323001E5A4E /* AddressAutoCompleteViewModel.swift */; };
+		BF7695971E49BEFE001E5A4E /* AddressAutocompleteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7695961E49BEFE001E5A4E /* AddressAutocompleteService.swift */; };
+		BF76959A1E49FAB7001E5A4E /* CLGeocoder+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7695991E49FAB7001E5A4E /* CLGeocoder+Rx.swift */; };
+		BF76959C1E4B1742001E5A4E /* AddressAutoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76959B1E4B1742001E5A4E /* AddressAutoCompleteView.swift */; };
 		BFE70CC41E45DF4A00D5096E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70CC31E45DF4A00D5096E /* AppDelegate.swift */; };
-		BFE70CD91E45DF4A00D5096E /* ChauffeurPriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70CD81E45DF4A00D5096E /* ChauffeurPriveTests.swift */; };
 		BFE70CE41E45DF4A00D5096E /* ChauffeurPriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70CE31E45DF4A00D5096E /* ChauffeurPriveUITests.swift */; };
 		BFE70CF91E45EC2600D5096E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE70CF51E45EC2600D5096E /* Assets.xcassets */; };
 		BFE70CFA1E45EC2600D5096E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE70CF61E45EC2600D5096E /* LaunchScreen.storyboard */; };
@@ -51,10 +63,22 @@
 		45244B8799F3EF9A6EDD9F5D /* Pods-ChauffeurPriveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChauffeurPriveUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChauffeurPriveUITests/Pods-ChauffeurPriveUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		591BA151D38F81ABC179A6ED /* Pods_ChauffeurPrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChauffeurPrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACBDE9DA7CBB13E23B22F42 /* Pods-ChauffeurPrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChauffeurPrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChauffeurPrive/Pods-ChauffeurPrive.debug.xcconfig"; sourceTree = "<group>"; };
+		BF0114E01E4B41D800DCE094 /* PostalAddressTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalAddressTests.swift; sourceTree = "<group>"; };
+		BF0114E31E4B4C7F00DCE094 /* MockPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPlacemark.swift; sourceTree = "<group>"; };
+		BF0114E61E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MGLMapView+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		BF427C811E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteTableViewCell.swift; sourceTree = "<group>"; };
+		BF427C831E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutoCompleteCellViewModel.swift; sourceTree = "<group>"; };
+		BF427C891E4B345000091E2F /* PostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalAddress.swift; sourceTree = "<group>"; };
+		BF427C8B1E4B3D6800091E2F /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
+		BF427C8D1E4B3D8700091E2F /* MGLMapView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MGLMapView+Extensions.swift"; sourceTree = "<group>"; };
+		BF7695921E493303001E5A4E /* AddressAutocompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteViewController.swift; sourceTree = "<group>"; };
+		BF7695941E493323001E5A4E /* AddressAutoCompleteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutoCompleteViewModel.swift; sourceTree = "<group>"; };
+		BF7695961E49BEFE001E5A4E /* AddressAutocompleteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteService.swift; sourceTree = "<group>"; };
+		BF7695991E49FAB7001E5A4E /* CLGeocoder+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLGeocoder+Rx.swift"; sourceTree = "<group>"; };
+		BF76959B1E4B1742001E5A4E /* AddressAutoCompleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutoCompleteView.swift; sourceTree = "<group>"; };
 		BFE70CC01E45DF4A00D5096E /* ChauffeurPrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChauffeurPrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE70CC31E45DF4A00D5096E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFE70CD41E45DF4A00D5096E /* ChauffeurPriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChauffeurPriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFE70CD81E45DF4A00D5096E /* ChauffeurPriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChauffeurPriveTests.swift; sourceTree = "<group>"; };
 		BFE70CDA1E45DF4A00D5096E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFE70CDF1E45DF4A00D5096E /* ChauffeurPriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChauffeurPriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE70CE31E45DF4A00D5096E /* ChauffeurPriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChauffeurPriveUITests.swift; sourceTree = "<group>"; };
@@ -118,6 +142,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BF0114DF1E4B41C600DCE094 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF0114E01E4B41D800DCE094 /* PostalAddressTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BF0114E21E4B4C7000DCE094 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BF0114E31E4B4C7F00DCE094 /* MockPlacemark.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		BF0114E51E4B4D5300DCE094 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF0114E61E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BF427C881E4B344200091E2F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF427C891E4B345000091E2F /* PostalAddress.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BF7695911E4932F3001E5A4E /* AddressAutoComplete */ = {
+			isa = PBXGroup;
+			children = (
+				BF7695921E493303001E5A4E /* AddressAutocompleteViewController.swift */,
+				BF76959B1E4B1742001E5A4E /* AddressAutoCompleteView.swift */,
+				BF7695941E493323001E5A4E /* AddressAutoCompleteViewModel.swift */,
+				BF427C811E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift */,
+				BF427C831E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift */,
+			);
+			path = AddressAutoComplete;
+			sourceTree = "<group>";
+		};
 		BFE70CB71E45DF4A00D5096E = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +213,7 @@
 			children = (
 				BFE70CC31E45DF4A00D5096E /* AppDelegate.swift */,
 				BFE70CFE1E45F58D00D5096E /* Extensions */,
+				BF427C881E4B344200091E2F /* Models */,
 				BFE70CF41E45EC2600D5096E /* Resources */,
 				BFE70D241E491AE300D5096E /* Screens */,
 				BFE70D211E491AD800D5096E /* Service */,
@@ -156,7 +225,9 @@
 		BFE70CD71E45DF4A00D5096E /* ChauffeurPriveTests */ = {
 			isa = PBXGroup;
 			children = (
-				BFE70CD81E45DF4A00D5096E /* ChauffeurPriveTests.swift */,
+				BF0114E51E4B4D5300DCE094 /* Extensions */,
+				BF0114E21E4B4C7000DCE094 /* Mocks */,
+				BF0114DF1E4B41C600DCE094 /* Models */,
 				BFE70CDA1E45DF4A00D5096E /* Info.plist */,
 			);
 			path = ChauffeurPriveTests;
@@ -186,6 +257,9 @@
 			children = (
 				BFE70CFF1E45F59F00D5096E /* CLLocationManager+Rx.swift */,
 				BFE70D0E1E48E17B00D5096E /* RxCLLocationManagerDelegateProxy.swift */,
+				BF7695991E49FAB7001E5A4E /* CLGeocoder+Rx.swift */,
+				BF427C8B1E4B3D6800091E2F /* CLLocationCoordinate2D+Extensions.swift */,
+				BF427C8D1E4B3D8700091E2F /* MGLMapView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -203,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				BFE70D221E491AD800D5096E /* LocationService.swift */,
+				BF7695961E49BEFE001E5A4E /* AddressAutocompleteService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -210,6 +285,7 @@
 		BFE70D241E491AE300D5096E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BF7695911E4932F3001E5A4E /* AddressAutoComplete */,
 				BFE70D251E491AE300D5096E /* Map */,
 			);
 			path = Screens;
@@ -521,10 +597,20 @@
 				BFE70CC41E45DF4A00D5096E /* AppDelegate.swift in Sources */,
 				BFE70D071E48CE0200D5096E /* Font.swift in Sources */,
 				BFE70D0F1E48E17B00D5096E /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				BF76959A1E49FAB7001E5A4E /* CLGeocoder+Rx.swift in Sources */,
+				BF427C841E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift in Sources */,
 				BFE70D2D1E491AE300D5096E /* MissingPermissionView.swift in Sources */,
+				BF427C8C1E4B3D6800091E2F /* CLLocationCoordinate2D+Extensions.swift in Sources */,
+				BF7695931E493303001E5A4E /* AddressAutocompleteViewController.swift in Sources */,
+				BF7695971E49BEFE001E5A4E /* AddressAutocompleteService.swift in Sources */,
 				BFE70D001E45F59F00D5096E /* CLLocationManager+Rx.swift in Sources */,
+				BF427C8A1E4B345000091E2F /* PostalAddress.swift in Sources */,
 				BFE70D231E491AD800D5096E /* LocationService.swift in Sources */,
+				BF7695951E493323001E5A4E /* AddressAutoCompleteViewModel.swift in Sources */,
+				BF76959C1E4B1742001E5A4E /* AddressAutoCompleteView.swift in Sources */,
 				BFE70D091E48CE0F00D5096E /* Color.swift in Sources */,
+				BF427C821E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift in Sources */,
+				BF427C8E1E4B3D8700091E2F /* MGLMapView+Extensions.swift in Sources */,
 				BFE70D2B1E491AE300D5096E /* MapViewController.swift in Sources */,
 				BFE70D2F1E491AE300D5096E /* MissingPermissionViewModel.swift in Sources */,
 				BFE70D2C1E491AE300D5096E /* MapViewModel.swift in Sources */,
@@ -535,7 +621,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFE70CD91E45DF4A00D5096E /* ChauffeurPriveTests.swift in Sources */,
+				BF0114E41E4B4C7F00DCE094 /* MockPlacemark.swift in Sources */,
+				BF0114E71E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift in Sources */,
+				BF0114E11E4B41D800DCE094 /* PostalAddressTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
