@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Contacts
 
 final class AddressAutoCompleteCellViewModel {
     let address: PostalAddress

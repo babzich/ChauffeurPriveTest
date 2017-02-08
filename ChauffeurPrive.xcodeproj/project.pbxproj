@@ -14,6 +14,8 @@
 		BF0114E41E4B4C7F00DCE094 /* MockPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114E31E4B4C7F00DCE094 /* MockPlacemark.swift */; };
 		BF0114E71E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114E61E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift */; };
 		BF0114EB1E4B64F600DCE094 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114EA1E4B64F600DCE094 /* Image.swift */; };
+		BF0114EF1E4B722A00DCE094 /* UserDefaultsSimpleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114EE1E4B722A00DCE094 /* UserDefaultsSimpleStorage.swift */; };
+		BF0114F21E4B76AA00DCE094 /* UserDefaultsSimpleStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114F11E4B76AA00DCE094 /* UserDefaultsSimpleStorageTests.swift */; };
 		BF427C821E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C811E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift */; };
 		BF427C841E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C831E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift */; };
 		BF427C8A1E4B345000091E2F /* PostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C891E4B345000091E2F /* PostalAddress.swift */; };
@@ -68,6 +70,8 @@
 		BF0114E31E4B4C7F00DCE094 /* MockPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPlacemark.swift; sourceTree = "<group>"; };
 		BF0114E61E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MGLMapView+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		BF0114EA1E4B64F600DCE094 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		BF0114EE1E4B722A00DCE094 /* UserDefaultsSimpleStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsSimpleStorage.swift; sourceTree = "<group>"; };
+		BF0114F11E4B76AA00DCE094 /* UserDefaultsSimpleStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsSimpleStorageTests.swift; sourceTree = "<group>"; };
 		BF427C811E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteTableViewCell.swift; sourceTree = "<group>"; };
 		BF427C831E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutoCompleteCellViewModel.swift; sourceTree = "<group>"; };
 		BF427C891E4B345000091E2F /* PostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalAddress.swift; sourceTree = "<group>"; };
@@ -168,6 +172,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BF0114F01E4B768B00DCE094 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BF0114F11E4B76AA00DCE094 /* UserDefaultsSimpleStorageTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		BF427C881E4B344200091E2F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +242,7 @@
 				BF0114E51E4B4D5300DCE094 /* Extensions */,
 				BF0114E21E4B4C7000DCE094 /* Mocks */,
 				BF0114DF1E4B41C600DCE094 /* Models */,
+				BF0114F01E4B768B00DCE094 /* Services */,
 				BFE70CDA1E45DF4A00D5096E /* Info.plist */,
 			);
 			path = ChauffeurPriveTests;
@@ -281,6 +294,7 @@
 			children = (
 				BFE70D221E491AD800D5096E /* LocationService.swift */,
 				BF7695961E49BEFE001E5A4E /* GeocodingService.swift */,
+				BF0114EE1E4B722A00DCE094 /* UserDefaultsSimpleStorage.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -609,6 +623,7 @@
 				BF7695971E49BEFE001E5A4E /* GeocodingService.swift in Sources */,
 				BFE70D001E45F59F00D5096E /* CLLocationManager+Rx.swift in Sources */,
 				BF427C8A1E4B345000091E2F /* PostalAddress.swift in Sources */,
+				BF0114EF1E4B722A00DCE094 /* UserDefaultsSimpleStorage.swift in Sources */,
 				BFE70D231E491AD800D5096E /* LocationService.swift in Sources */,
 				BF7695951E493323001E5A4E /* AddressAutoCompleteViewModel.swift in Sources */,
 				BF76959C1E4B1742001E5A4E /* AddressAutoCompleteView.swift in Sources */,
@@ -625,6 +640,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0114F21E4B76AA00DCE094 /* UserDefaultsSimpleStorageTests.swift in Sources */,
 				BF0114E41E4B4C7F00DCE094 /* MockPlacemark.swift in Sources */,
 				BF0114E71E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift in Sources */,
 				BF0114E11E4B41D800DCE094 /* PostalAddressTests.swift in Sources */,

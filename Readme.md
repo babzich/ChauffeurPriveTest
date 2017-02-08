@@ -5,7 +5,7 @@
 - [x] STEP 1
 - [x] STEP 2
 - [x] STEP 3
-- [ ] STEP 4
+- [x] STEP 4 (not finished)
 - [ ] STEP 5
 - [ ] STEP 6
 - [ ] STEP 7
@@ -21,4 +21,4 @@
 All the dependencies are distributed with the project so you just need to open `ChauffeurPrive.xcworkspace` in Xcode and press the Run button.
 
 ### Test
-TDB
+Run the Unit Test suite via Xcode
