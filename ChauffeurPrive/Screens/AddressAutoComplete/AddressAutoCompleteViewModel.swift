@@ -18,24 +18,24 @@ protocol AddressAutoCompleteViewModelType {
 }
 
 final class AddressAutoCompleteViewModel: AddressAutoCompleteViewModelType {
-    private let autocompleteService: AddressAutocompleteServiceType
+    private let geocodingService: GeocodingServiceType
     var didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel>
     
     // MARK: Initializers
     
-    init(autocompleteService: AddressAutocompleteServiceType, didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel>) {
-        self.autocompleteService = autocompleteService
+    init(geocodingService: GeocodingServiceType, didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel>) {
+        self.geocodingService = geocodingService
         self.didSelectAddress = didSelectAddress
     }
     
     convenience init(didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel>) {
-        self.init(autocompleteService: AddressAutocompleteService(), didSelectAddress: didSelectAddress)
+        self.init(geocodingService: GeocodingService(), didSelectAddress: didSelectAddress)
     }
     
     // MARK: AddressAutoCompleteViewModelType
     
     func addresses(for string: String) -> Driver<[AddressAutoCompleteCellViewModel]> {
-        return autocompleteService.fetchAddress(string)
+        return geocodingService.fetchAddress(string)
             .map { addresses in
                 addresses.map { AddressAutoCompleteCellViewModel(address: $0)
             }

@@ -4,7 +4,7 @@
 
 - [x] STEP 1
 - [x] STEP 2
-- [ ] STEP 3
+- [x] STEP 3
 - [ ] STEP 4
 - [ ] STEP 5
 - [ ] STEP 6

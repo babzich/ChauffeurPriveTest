@@ -1,5 +1,5 @@
 //
-//  AddressAutocompleteService.swift
+//  GeocodingService.swift
 //  ChauffeurPrive
 //
 //  Created by Vincent Bach on 07/02/2017.
@@ -8,15 +8,15 @@
 
 import Foundation
 import CoreLocation
-import Contacts
 import RxSwift
 import RxCocoa
 
-protocol AddressAutocompleteServiceType {
+protocol GeocodingServiceType {
     func fetchAddress(_ address: String) -> Observable<[PostalAddress]>
+    func reverseGeocodeLocation(_ location: CLLocation) -> Observable<PostalAddress?>
 }
 
-final class AddressAutocompleteService: AddressAutocompleteServiceType {
+final class GeocodingService: GeocodingServiceType {
     private let geocoder: CLGeocoder
     private let locationService: LocationServiceType
     
@@ -31,6 +31,8 @@ final class AddressAutocompleteService: AddressAutocompleteServiceType {
         self.init(geocoder: CLGeocoder(), locationService: LocationService.instance)
     }
     
+    // MARK: GeocodingServiceType
+    
     func fetchAddress(_ address: String) -> Observable<[PostalAddress]> {
         return locationService.currentRegion
             .asObservable()
@@ -40,5 +42,12 @@ final class AddressAutocompleteService: AddressAutocompleteServiceType {
                     placemarks.flatMap { PostalAddress(placemark: $0) }
                 }
             }
+    }
+    
+    func reverseGeocodeLocation(_ location: CLLocation) -> Observable<PostalAddress?> {
+        return self.geocoder.rx.reverseGeocodeLocation(location).map { (placemark: CLPlacemark?) -> PostalAddress? in
+            guard let placemark = placemark else { return nil }
+             return PostalAddress(placemark: placemark)
+        }
     }
 }

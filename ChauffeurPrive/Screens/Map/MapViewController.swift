@@ -13,10 +13,10 @@ import Mapbox
 
 final class MapViewController: UIViewController {
     private let mapView: MGLMapView
-    private lazy var addressAnnotation = MGLPointAnnotation()
     private let searchTextField: UITextField
+    private let locationPin: UIImageView
     
-    private let viewModel: MapViewModel
+    fileprivate let viewModel: MapViewModel
     private let disposeBag: DisposeBag
     
     // MARK: Initializers
@@ -25,6 +25,7 @@ final class MapViewController: UIViewController {
         self.viewModel = MapViewModel()
         self.mapView = MGLMapView(frame: .zero)
         self.searchTextField = UITextField(frame: .zero)
+        self.locationPin = UIImageView(image: Image.locationPin)
         self.disposeBag = DisposeBag()
         
         super.init(nibName: nil, bundle: nil)
@@ -43,8 +44,7 @@ final class MapViewController: UIViewController {
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
         
-        view.addSubview(mapView)
-        view.addSubview(searchTextField)
+        [mapView, searchTextField, locationPin].forEach { view.addSubview($0) }
         setupSearchTextField()
         setupBinding()
     }
@@ -57,6 +57,7 @@ final class MapViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         mapView.frame = view.bounds
+        locationPin.center = view.center
     }
     
     // MARK: Setup
@@ -66,10 +67,11 @@ final class MapViewController: UIViewController {
         searchTextField.backgroundColor = UIColor.white
         searchTextField.leftView = UIView.init(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 40.0))
         searchTextField.leftViewMode = .always
+        searchTextField.font = Font.System.regular.of(size: 12.0)
         
         let topConstraint = searchTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 30.0)
-        let leftConstraint = searchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40.0)
-        let rightConstraint = searchTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40.0)
+        let leftConstraint = searchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0)
+        let rightConstraint = searchTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0)
         let heightConstraint = searchTextField.heightAnchor.constraint(equalToConstant: 40.0)
         NSLayoutConstraint.activate([topConstraint, leftConstraint, rightConstraint, heightConstraint])
     }
@@ -102,6 +104,19 @@ final class MapViewController: UIViewController {
         viewModel.selectedAddressFormatted
             .drive(searchTextField.rx.text)
             .disposed(by: disposeBag)
+        
+        viewModel.location
+            .asObservable()
+            .take(1)
+            .subscribe(onNext: { [weak self] coordinate in
+                self?.setupInitalMapPosition(with: coordinate)
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.pinLocationFormattedAddress
+            .skip(1)
+            .drive(searchTextField.rx.text)
+            .disposed(by: disposeBag)
     }
     
     // MARK: Common
@@ -112,7 +127,6 @@ final class MapViewController: UIViewController {
     }
     
     private func locationAuthorized() {
-        mapView.showsUserLocation = true
         if let presentedViewController = navigationController?.presentedViewController {
             presentedViewController.dismiss(animated: false, completion: nil)
         }
@@ -126,21 +140,19 @@ final class MapViewController: UIViewController {
     }
     
     private func updateAddressPin(with coordinate: CLLocationCoordinate2D) {
-        addressAnnotation.coordinate = coordinate
-        
-        if !mapView.contains(addressAnnotation) {
-            mapView.addAnnotation(addressAnnotation)
-        }
-        
         mapView.setCenter(coordinate, animated: true)
+    }
+    
+    private func setupInitalMapPosition(with coordinate: CLLocationCoordinate2D) {
+        mapView.setCenter(coordinate, zoomLevel: 12.0, animated: true)
+        mapView.showsUserLocation = true
     }
 }
 
 // MARK: MGLMapViewDelegate
 
 extension MapViewController: MGLMapViewDelegate {
-    func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
-        guard let userLocation = userLocation else { return }
-        mapView.setCenter(userLocation.coordinate, zoomLevel: 12.0, animated: true)
+    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+        viewModel.pinLocationCoordinate.onNext(mapView.centerCoordinate)
     }
 }

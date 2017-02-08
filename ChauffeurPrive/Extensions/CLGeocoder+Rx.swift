@@ -31,4 +31,23 @@ extension Reactive where Base: CLGeocoder {
             }
         }
     }
+    
+    func reverseGeocodeLocation(_ location: CLLocation) -> Observable<CLPlacemark?> {
+        return Observable.create { observer in
+            
+            self.base.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+                if let error = error {
+                    observer.onError(error)
+                }
+                else {
+                    observer.onNext(placemarks?.first)
+                    observer.onCompleted()
+                }
+            })
+            
+            return Disposables.create {
+                self.base.cancelGeocode()
+            }
+        }
+    }
 }

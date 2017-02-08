@@ -13,6 +13,7 @@
 		BF0114E11E4B41D800DCE094 /* PostalAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114E01E4B41D800DCE094 /* PostalAddressTests.swift */; };
 		BF0114E41E4B4C7F00DCE094 /* MockPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114E31E4B4C7F00DCE094 /* MockPlacemark.swift */; };
 		BF0114E71E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114E61E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift */; };
+		BF0114EB1E4B64F600DCE094 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0114EA1E4B64F600DCE094 /* Image.swift */; };
 		BF427C821E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C811E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift */; };
 		BF427C841E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C831E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift */; };
 		BF427C8A1E4B345000091E2F /* PostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C891E4B345000091E2F /* PostalAddress.swift */; };
@@ -20,7 +21,7 @@
 		BF427C8E1E4B3D8700091E2F /* MGLMapView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF427C8D1E4B3D8700091E2F /* MGLMapView+Extensions.swift */; };
 		BF7695931E493303001E5A4E /* AddressAutocompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7695921E493303001E5A4E /* AddressAutocompleteViewController.swift */; };
 		BF7695951E493323001E5A4E /* AddressAutoCompleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7695941E493323001E5A4E /* AddressAutoCompleteViewModel.swift */; };
-		BF7695971E49BEFE001E5A4E /* AddressAutocompleteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7695961E49BEFE001E5A4E /* AddressAutocompleteService.swift */; };
+		BF7695971E49BEFE001E5A4E /* GeocodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7695961E49BEFE001E5A4E /* GeocodingService.swift */; };
 		BF76959A1E49FAB7001E5A4E /* CLGeocoder+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7695991E49FAB7001E5A4E /* CLGeocoder+Rx.swift */; };
 		BF76959C1E4B1742001E5A4E /* AddressAutoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76959B1E4B1742001E5A4E /* AddressAutoCompleteView.swift */; };
 		BFE70CC41E45DF4A00D5096E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE70CC31E45DF4A00D5096E /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		BF0114E01E4B41D800DCE094 /* PostalAddressTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalAddressTests.swift; sourceTree = "<group>"; };
 		BF0114E31E4B4C7F00DCE094 /* MockPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPlacemark.swift; sourceTree = "<group>"; };
 		BF0114E61E4B4D6B00DCE094 /* MGLMapView+ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MGLMapView+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		BF0114EA1E4B64F600DCE094 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		BF427C811E4B1B5A00091E2F /* AddressAutocompleteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteTableViewCell.swift; sourceTree = "<group>"; };
 		BF427C831E4B1CB200091E2F /* AddressAutoCompleteCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutoCompleteCellViewModel.swift; sourceTree = "<group>"; };
 		BF427C891E4B345000091E2F /* PostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalAddress.swift; sourceTree = "<group>"; };
@@ -73,7 +75,7 @@
 		BF427C8D1E4B3D8700091E2F /* MGLMapView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MGLMapView+Extensions.swift"; sourceTree = "<group>"; };
 		BF7695921E493303001E5A4E /* AddressAutocompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteViewController.swift; sourceTree = "<group>"; };
 		BF7695941E493323001E5A4E /* AddressAutoCompleteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutoCompleteViewModel.swift; sourceTree = "<group>"; };
-		BF7695961E49BEFE001E5A4E /* AddressAutocompleteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutocompleteService.swift; sourceTree = "<group>"; };
+		BF7695961E49BEFE001E5A4E /* GeocodingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodingService.swift; sourceTree = "<group>"; };
 		BF7695991E49FAB7001E5A4E /* CLGeocoder+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLGeocoder+Rx.swift"; sourceTree = "<group>"; };
 		BF76959B1E4B1742001E5A4E /* AddressAutoCompleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutoCompleteView.swift; sourceTree = "<group>"; };
 		BFE70CC01E45DF4A00D5096E /* ChauffeurPrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChauffeurPrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +271,7 @@
 			children = (
 				BFE70D061E48CE0200D5096E /* Font.swift */,
 				BFE70D081E48CE0F00D5096E /* Color.swift */,
+				BF0114EA1E4B64F600DCE094 /* Image.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -277,7 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				BFE70D221E491AD800D5096E /* LocationService.swift */,
-				BF7695961E49BEFE001E5A4E /* AddressAutocompleteService.swift */,
+				BF7695961E49BEFE001E5A4E /* GeocodingService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -602,7 +605,8 @@
 				BFE70D2D1E491AE300D5096E /* MissingPermissionView.swift in Sources */,
 				BF427C8C1E4B3D6800091E2F /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				BF7695931E493303001E5A4E /* AddressAutocompleteViewController.swift in Sources */,
-				BF7695971E49BEFE001E5A4E /* AddressAutocompleteService.swift in Sources */,
+				BF0114EB1E4B64F600DCE094 /* Image.swift in Sources */,
+				BF7695971E49BEFE001E5A4E /* GeocodingService.swift in Sources */,
 				BFE70D001E45F59F00D5096E /* CLLocationManager+Rx.swift in Sources */,
 				BF427C8A1E4B345000091E2F /* PostalAddress.swift in Sources */,
 				BFE70D231E491AD800D5096E /* LocationService.swift in Sources */,
