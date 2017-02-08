@@ -21,8 +21,8 @@ final class MapViewController: UIViewController {
     
     // MARK: Initializers
     
-    init() {
-        self.viewModel = MapViewModel()
+    init(viewModel: MapViewModel) {
+        self.viewModel = viewModel
         self.mapView = MGLMapView(frame: .zero)
         self.searchTextField = UITextField(frame: .zero)
         self.locationPin = UIImageView(image: Image.locationPin)
@@ -91,7 +91,7 @@ final class MapViewController: UIViewController {
             .disposed(by: disposeBag)
         
         searchTextField.rx.controlEvent(.editingDidBegin)
-            .subscribe(onNext: { [weak self] _ in self?.displayAddressAutocomplete() } )
+            .bindTo(viewModel.didTapAddressField)
             .disposed(by: disposeBag)
         
         viewModel.selectedAddressCoordinate
@@ -130,13 +130,6 @@ final class MapViewController: UIViewController {
         if let presentedViewController = navigationController?.presentedViewController {
             presentedViewController.dismiss(animated: false, completion: nil)
         }
-    }
-    
-    private func displayAddressAutocomplete() {
-        let vm = AddressAutoCompleteViewModel(didSelectAddress: viewModel.didSelectAddress)
-        let autocompleteViewController = AddressAutoCompleteViewController(viewModel: vm)
-        let navigationController = UINavigationController(rootViewController: autocompleteViewController)
-        present(navigationController, animated: true, completion: nil)
     }
     
     private func updateAddressPin(with coordinate: CLLocationCoordinate2D) {

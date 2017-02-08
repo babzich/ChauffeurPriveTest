@@ -54,11 +54,7 @@ final class AddressAutoCompleteViewController: UIViewController {
             self.navigationController?.dismiss(animated: true, completion: nil)
         })
         .disposed(by: disposeBag)
-        
-        viewModel.didSelectAddress.subscribe(onNext: { _ in
-            self.navigationController?.dismiss(animated: true, completion: nil)
-        })
-        .disposed(by: disposeBag)
+
     }
 }
 

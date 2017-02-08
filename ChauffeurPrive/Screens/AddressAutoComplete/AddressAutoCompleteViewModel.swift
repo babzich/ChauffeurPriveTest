@@ -11,34 +11,61 @@ import RxSwift
 import RxCocoa
 
 protocol AddressAutoCompleteViewModelType {
+    // Input
+    var addressInput: PublishSubject<String> { get }
     // Output
-    func addresses(for string: String) -> Driver<[AddressAutoCompleteCellViewModel]>
-    var didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel> { get }
+    var addresses: Variable<[AddressAutoCompleteCellViewModel]> { get }
+    var itemSelected: PublishSubject<IndexPath> { get }
+//    var didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel> { get }
 }
 
 final class AddressAutoCompleteViewModel: AddressAutoCompleteViewModelType {
     private let geocodingService: GeocodingServiceType
-    var didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel>
+    
+    let addressInput: PublishSubject<String>
+    let addresses: Variable<[AddressAutoCompleteCellViewModel]>
+    let itemSelected: PublishSubject<IndexPath>
+    
+    private let disposeBag: DisposeBag
+    
+    weak var navigationCoordinator: AddressAutoCompleteCoordinator? {
+        didSet {
+            guard let navigationCoordinator = navigationCoordinator else { return }
+            itemSelected
+                .map { self.addresses.value[$0.row] }
+                .map { $0.address }
+                .bindTo(navigationCoordinator.didTapAddress)
+                .disposed(by: disposeBag)
+        }
+    }
     
     // MARK: Initializers
     
-    init(geocodingService: GeocodingServiceType, didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel>) {
+    init(geocodingService: GeocodingServiceType) {
         self.geocodingService = geocodingService
-        self.didSelectAddress = didSelectAddress
+        self.addressInput = PublishSubject<String>()
+        self.addresses = Variable<[AddressAutoCompleteCellViewModel]>([])
+        self.itemSelected = PublishSubject<IndexPath>()
+        self.disposeBag = DisposeBag()
+        
+        bind()
     }
     
-    convenience init(didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel>) {
-        self.init(geocodingService: GeocodingService(), didSelectAddress: didSelectAddress)
+    convenience init() {
+        self.init(geocodingService: GeocodingService())
     }
     
-    // MARK: AddressAutoCompleteViewModelType
+    // MARK: Binding
     
-    func addresses(for string: String) -> Driver<[AddressAutoCompleteCellViewModel]> {
-        return geocodingService.fetchAddress(string)
-            .map { addresses in
-                addresses.map { AddressAutoCompleteCellViewModel(address: $0)
+    private func bind() {
+        addressInput
+            .flatMap { string in
+                return self.geocodingService.fetchAddress(string)
+                    .catchErrorJustReturn([])
+                    .map { $0.map { AddressAutoCompleteCellViewModel(address: $0) }
+                }
             }
-        }
-        .asDriver(onErrorJustReturn: [])
+            .bindTo(addresses)
+            .disposed(by: disposeBag)
     }
 }

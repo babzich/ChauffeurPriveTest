@@ -61,22 +61,22 @@ final class AddressAutoCompleteView: UIView {
     
     private func bind() {
         // Missing: empty state && error state
-        searchBar.rx.text.orEmpty.asDriver()
-            .throttle(0.3)
+        searchBar.rx.text.orEmpty
+            .throttle(0.3, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .filter { $0.characters.count > 3 }
-            .flatMapLatest { address -> Driver<[AddressAutoCompleteCellViewModel]> in
-                return self.viewModel.addresses(for: address)
-            }
+            .bindTo(viewModel.addressInput)
+            .disposed(by: disposeBag)
+        
+        viewModel.addresses
+            .asDriver()
             .drive(tableView.rx.items(cellIdentifier: Constants.autocompleteCellIdentifier, cellType: AddressAutoCompleteTableViewCell.self)) { (row, viewModel, cell) in
                 cell.viewModel = viewModel
             }
             .disposed(by: disposeBag)
         
-        
-        tableView.rx.modelSelected(AddressAutoCompleteCellViewModel.self)
-            .asObservable()
-            .bindTo(viewModel.didSelectAddress)
+        tableView.rx.itemSelected
+            .bindTo(viewModel.itemSelected)
             .disposed(by: disposeBag)
     }
 }

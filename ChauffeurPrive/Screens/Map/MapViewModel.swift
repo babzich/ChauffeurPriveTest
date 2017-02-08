@@ -14,8 +14,9 @@ import CoreLocation
 protocol MapViewModelType {
     // Input
     var viewDidAppear: PublishSubject<Void> { get }
-    var didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel> { get }
+    var didSelectAddress: PublishSubject<PostalAddress> { get }
     var pinLocationCoordinate: PublishSubject<CLLocationCoordinate2D> { get }
+    var didTapAddressField: PublishSubject<Void> { get }
     
     // Output
     var searchPlaceholder: String { get }
@@ -29,11 +30,13 @@ protocol MapViewModelType {
 final class MapViewModel: MapViewModelType {
     private let locationService: LocationServiceType
     private let geocodingService: GeocodingServiceType
+    private let disposeBag: DisposeBag
     
     let searchPlaceholder: String
     let viewDidAppear: PublishSubject<Void>
-    let didSelectAddress: PublishSubject<AddressAutoCompleteCellViewModel>
+    let didSelectAddress: PublishSubject<PostalAddress>
     let pinLocationCoordinate: PublishSubject<CLLocationCoordinate2D>
+    let didTapAddressField: PublishSubject<Void>
     
     let locationAuthorized: Driver<Bool>
     let pinLocationFormattedAddress: Driver<String>
@@ -41,23 +44,34 @@ final class MapViewModel: MapViewModelType {
     let selectedAddressCoordinate: Driver<CLLocationCoordinate2D?>
     let selectedAddressFormatted: Driver<String>
     
+    weak var navigationCoordinator: MapCoordinator? {
+        didSet {
+            guard let navigationCoordinator = navigationCoordinator else { return }
+            didTapAddressField
+                .bindTo(navigationCoordinator.didTapAddress)
+                .disposed(by: disposeBag)
+        }
+    }
+    
     
     // MARK: Initializers
     
     init(locationService: LocationServiceType, geocodingService: GeocodingServiceType) {
         self.locationService = locationService
         self.geocodingService = geocodingService
+        self.disposeBag = DisposeBag()
         self.searchPlaceholder = "Search an address"
         self.viewDidAppear = PublishSubject<Void>()
-        self.didSelectAddress = PublishSubject<AddressAutoCompleteCellViewModel>()
+        self.didSelectAddress = PublishSubject<PostalAddress>()
         self.pinLocationCoordinate = PublishSubject<CLLocationCoordinate2D>()
+        self.didTapAddressField = PublishSubject<Void>()
         
         self.selectedAddressCoordinate = didSelectAddress
-            .map { $0.address.coordinate }
+            .map { $0.coordinate }
             .asDriver(onErrorJustReturn: nil)
         
         self.selectedAddressFormatted = didSelectAddress
-            .map { $0.address.formattedAddress }
+            .map { $0.formattedAddress }
             .asDriver(onErrorJustReturn: "")
         
         let authorizationAsked = locationService.authorizationStatus.asObservable()
